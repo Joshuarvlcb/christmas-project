@@ -8,6 +8,7 @@
 
 body {
   font-family: "Mountains of Christmas", cursive;
+  overflow: hidden;
 }
 h1 {
   color: aliceblue;
@@ -26,10 +27,10 @@ h1 {
 .gradient {
   background-image: linear-gradient(
     to top right,
-    rgba(0, 128, 0, 0.719),
-    rgba(155, 9, 9, 0.692)
+    rgba(0, 128, 0, 0.582),
+    rgba(255, 255, 255, 0.445),
+    rgba(199, 35, 35, 0.603)
   );
-
   width: 100%;
   height: 100%;
   position: absolute;
@@ -44,4 +45,61 @@ h1 {
   left: 0;
   top: 0;
   z-index: -3;
+}
+.answers {
+  display: grid;
+  height: 100%;
+  width: 100%;
+  grid-template-columns: repeat(4, 500px);
+  position: absolute;
+  grid-gap: 100px;
+  justify-content: center;
+  align-content: center;
+  font-family: "Zilla Slab", serif;
+  font-weight: 700;
+}
+span {
+  color: blue;
+  z-index: 100;
+}
+/* .first{
+  background-image: linear-gradient(to bottom, rgb(151, 39, 39),rgb(117, 12, 12));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent; 
+} */
+h3 {
+  font-size: 28px;
+  display: flex;
+  flex-direction: column;
+}
+.btn {
+  width: 100%;
+  display: flex;
+  margin-top: 40px;
+  justify-content: center;
+}
+
+button {
+  background-image: linear-gradient(to right, pink, purple);
+  color: rgb(255, 255, 255);
+  display: flex;
+  width: 200px;
+  height: 50px;
+  border-radius: 40px;
+  outline: none;
+  font-size: 17px;
+  cursor: pointer;
+  font-weight: bold;
+  text-align: center;
+  justify-content: center;
+  align-items: center;
+  white-space: nowrap;
+}
+.hover:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 5px 10px rgba(211, 13, 152, 0.5);
+}
+.hover:active {
+  transform: translateY(1px);
+  box-shadow: 0 5px 10px rgba(0, 0, 0, 0);
 }

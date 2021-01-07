@@ -1,5 +1,33 @@
 "use strict";
 
+//getting the buttons to display answer
+const btn1 = document.getElementById("answer-1");
+const btn2 = document.getElementById("answer-2");
+const btn3 = document.getElementById("answer-3");
+const btn4 = document.getElementById("answer-4");
+
+const btn1Action = function () {
+  btn1.textContent = "3736692 feet";
+  btn1.classList.remove("hover");
+};
+const btn2Action = function () {
+  btn2.textContent = "2131534 feet";
+  btn2.classList.remove("hover");
+};
+const btn3Action = function () {
+  btn3.textContent = "37395 feet";
+  btn3.classList.remove("hover");
+};
+const btn4Action = function () {
+  btn4.textContent = "3845860 feet";
+  btn4.classList.remove("hover");
+};
+
+btn1.addEventListener("click", btn1Action);
+btn2.addEventListener("click", btn2Action);
+btn3.addEventListener("click", btn3Action);
+btn4.addEventListener("click", btn4Action);
+
 let volumeCalc = `3x11x24
 13x5x19
 1x9x27
@@ -1005,22 +1033,21 @@ volumeCalc = volumeCalc.split("\n");
 
 //how to loop through through 1 index of the array
 
-// const calcVolume = function () {
-//   let total = 0;
-//   let volume = 1;
-//   for (let i = 0; i < volumeCalc.length; i++) {
-//     let numbers = volumeCalc[i].split("x");
-//     console.log(numbers);
-//     let l = numbers[0];
-//     let w = numbers[1];
-//     let h = numbers[2];
+const calcVolume = function () {
+  let total = 0;
+  let volume = 1;
+  for (let i = 0; i < volumeCalc.length; i++) {
+    let numbers = volumeCalc[i].split("x");
+    let l = numbers[0];
+    let w = numbers[1];
+    let h = numbers[2];
 
-//     volume = l * w * h;
-//     total += volume;
-//   }
-//   return total;
-// };
-// console.log(calcVolume());
+    volume = l * w * h;
+    total += volume;
+  }
+  return total + " answer 1";
+};
+console.log(calcVolume());
 
 //2.
 
@@ -1036,25 +1063,23 @@ volumeCalc = volumeCalc.split("\n");
 // how to get lowest to greatest numbers on the array
 // how to loop through the inside the array and compare
 
-// const volume = function () {
-//   let total = 0;
-//   let volume = 1;
-//   for (let i = 0; i < volumeCalc.length; i++) {
-//     let dimensions = volumeCalc[i].split("x");
-//     dimensions.sort((a, b) => a - b);
-//     console.log(dimensions);
+const volume = function () {
+  let total = 0;
+  let volume = 1;
+  for (let i = 0; i < volumeCalc.length; i++) {
+    let dimensions = volumeCalc[i].split("x");
+    dimensions.sort((a, b) => a - b);
 
-//     let s = Number(dimensions[0]);
-//     let m = Number(dimensions[1]);
-//     let l = Number(dimensions[2]);
-//     volume = (2 * s + l) * (2 * m + 2 * s);
-//     console.log(volume);
+    let s = Number(dimensions[0]);
+    let m = Number(dimensions[1]);
+    let l = Number(dimensions[2]);
+    volume = (2 * s + l) * (2 * m + 2 * s);
 
-//     total += volume;
-//   }
-//   return total;
-// };
-// console.log(volume());
+    total += volume;
+  }
+  return total + " answer 2";
+};
+console.log(volume());
 
 //3.
 //Whats the problem?
@@ -1067,27 +1092,25 @@ volumeCalc = volumeCalc.split("\n");
 // What i need
 //i need to find the smllest length on each equation from question 2
 
-// const smallLength = function () {
-//   let total = 0;
-//   for (let i = 0; i < volumeCalc.length; i++) {
-//     let dimensions = volumeCalc[i].split("x");
-//     dimensions.sort((a, b) => a - b);
-//     let s = Number(dimensions[0]);
-//     let m = Number(dimensions[1]);
-//     let l = Number(dimensions[2]);
-//     let first = 2 * s + l;
-//     let second = 2 * m + 2 * s;
-//     if (first < second) {
-//       console.log(first);
-//       total += first;
-//     } else {
-//       console.log(second);
-//       total += second;
-//     }
-//   }
-//   return total + " length";
-// };
-// console.log(smallLength());
+const smallLength = function () {
+  let total = 0;
+  for (let i = 0; i < volumeCalc.length; i++) {
+    let dimensions = volumeCalc[i].split("x");
+    dimensions.sort((a, b) => a - b);
+    let s = Number(dimensions[0]);
+    let m = Number(dimensions[1]);
+    let l = Number(dimensions[2]);
+    let first = 2 * s + l;
+    let second = 2 * m + 2 * s;
+    if (first < second) {
+      total += first;
+    } else {
+      total += second;
+    }
+  }
+  return total + " answer 3";
+};
+console.log(smallLength());
 
 //4.
 //Whats the probelm?
@@ -1102,16 +1125,22 @@ const ribbonCalc = function () {
 
   for (let i = 0; i < volumeCalc.length; i++) {
     let dimensions = volumeCalc[i].split("x");
-    console.log(dimensions);
     dimensions.sort((a, b) => a - b);
     let s = Number(dimensions[0]);
     let m = Number(dimensions[1]);
     let l = Number(dimensions[2]);
-    ribbon = (s + m + s + m) + (s + l + s + l) + (s * m * l);
-    console.log(ribbon);
+    ribbon = s + m + s + m + (s + l + s + l) + s * m * l;
     total += ribbon;
-
   }
-  return total + ' ribbons'
+  return total + " answer 4";
 };
 console.log(ribbonCalc());
+// let nums  = [5,100,9,2,4];
+
+// function compare  (a,b){
+//   console.log( a, b)
+// }
+
+// console.log(nums);
+// nums.sort(compare);
+// console.log(nums);
